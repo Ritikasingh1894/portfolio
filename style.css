@@ -252,6 +252,30 @@ button:focus-visible {
     backdrop-filter: blur(12px);
 }
 
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--pink-dark);
+    font-size: 1.15rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
 .logo {
     color: var(--dark);
     font-size: 1.8rem;
