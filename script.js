@@ -39,10 +39,21 @@ navLinks.querySelectorAll("a").forEach(function (link) {
 
 // DARK MODE
 const themeToggle = document.getElementById("themeToggle");
+const storedTheme = localStorage.getItem("ritikaPortfolioTheme");
+
+if (storedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+    themeToggle.setAttribute("aria-label", "Switch to light mode");
+} else {
+    themeToggle.textContent = "🌙";
+    themeToggle.setAttribute("aria-label", "Switch to dark mode");
+}
 
 themeToggle.addEventListener("click", function () {
     const darkMode = document.body.classList.toggle("dark-mode");
 
+    localStorage.setItem("ritikaPortfolioTheme", darkMode ? "dark" : "light");
     themeToggle.textContent = darkMode ? "☀️" : "🌙";
     themeToggle.setAttribute(
         "aria-label",
